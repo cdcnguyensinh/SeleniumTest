@@ -51,11 +51,39 @@
     <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasePage.cs" />
+    <Compile Include="BuiderProperties\BuilderDetailProp.cs" />
+    <Compile Include="BuiderProperties\EligibilityDetailsProp.cs" />
+    <Compile Include="BuiderProperties\FinancialInputsProp.cs" />
+    <Compile Include="BuiderProperties\FinancialOutputsProp.cs" />
+    <Compile Include="BuiderProperties\HomeProp.cs" />
+    <Compile Include="BuiderProperties\InitiateReviewProp.cs" />
+    <Compile Include="BuiderProperties\OverallOutcomeProp.cs" />
+    <Compile Include="BuiderProperties\ReportsProp.cs" />
+    <Compile Include="BuiderProperties\TaskAdministrationProp.cs" />
+    <Compile Include="BuiderProperties\TrackRecordProp.cs" />
+    <Compile Include="BuilderServices\BuilderDetailsService.cs" />
+    <Compile Include="BuilderServices\EligibilityDetailsService.cs" />
+    <Compile Include="BuilderServices\FinancialInputsService.cs" />
+    <Compile Include="BuilderServices\FinancialOutputsService.cs" />
+    <Compile Include="BuilderServices\HomeService.cs" />
+    <Compile Include="BuilderServices\InitiateReviewService.cs" />
+    <Compile Include="BuilderServices\OverallOutcomeService.cs" />
+    <Compile Include="BuilderServices\ReportsService.cs" />
+    <Compile Include="BuilderServices\TaskAdministrationService.cs" />
+    <Compile Include="BuilderServices\TrackRecordService.cs" />
+    <Compile Include="Builder\BuilderPage.cs" />
+    <Compile Include="Builder\BuilderTest.cs" />
+    <Compile Include="LoginPage.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
