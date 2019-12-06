@@ -299,31 +299,10 @@ namespace SICorp.Test.BuilderServices
         }
 
         /// <summary>
-        /// Click Send button in Offer Terms dialog
-        /// </summary>
-        public static void ClickSendOfferTermsButton()
-        {
-            var lstDialog = Util.GetElementsByProperty(OverallOutcomeProp.SendOfferTermsButton);
-            if (lstDialog != null)
-            {
-                Builder.BuilderPage builderPage = new Builder.BuilderPage(Util.Driver);
-                foreach (var itemDialog in lstDialog)
-                {
-                    if (itemDialog.Text.ToUpper().Contains(Common.LblSend.ToUpper()))
-                    {
-                        itemDialog.Click();
-                        builderPage.WaitTillBusyDialogClose();
-                        Thread.Sleep(3000);
-                        break;
-                    }
-                }
-            }
-        }
-
-        /// <summary>
         /// Click OK button after send mail in Ofter Terms dialog
         /// </summary>
-        public static void ClickOkOfferTermsEmailDialog()
+        /// <param name="btnName">Button name</param>
+        public static void ClickBtnByBtnNameInOfferTermsEmailDialog(string btnName)
         {
             var dialog = Util.GetElementsByProperty(OverallOutcomeProp.ValidationErrorDialog);
             if (dialog != null)
@@ -338,7 +317,7 @@ namespace SICorp.Test.BuilderServices
                         {
                             foreach (var iBtn in lstButton)
                             {
-                                if (iBtn.Text.ToUpper().Contains("OK"))
+                                if (iBtn.Text.ToUpper().Contains(btnName.ToUpper()))
                                 {
                                     iBtn.Click();
                                     Util.WaitTillBusyDialogClose();
@@ -350,6 +329,37 @@ namespace SICorp.Test.BuilderServices
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Check is display OK button after send mail in Ofter Terms dialog
+        /// </summary>
+        public static bool IsDisplayBtnByBtnName(string btnName)
+        {
+            var dialog = Util.GetElementsByProperty(OverallOutcomeProp.ValidationErrorDialog);
+            if (dialog != null)
+            {
+                foreach (var iDia in dialog)
+                {
+                    if (iDia.Displayed && iDia.Enabled)
+                    {
+                        // Find OK button
+                        var lstButton = iDia.FindElements(By.TagName(Common.TagNameButton));
+                        if (lstButton != null)
+                        {
+                            foreach (var iBtn in lstButton)
+                            {
+                                if (iBtn.Text.ToUpper().Contains(btnName.ToUpper()))
+                                {
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return false;
         }
 
         /// <summary>

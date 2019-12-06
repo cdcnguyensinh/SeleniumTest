@@ -225,7 +225,7 @@ namespace SICorp.Test.Builder
                 //builderPage.ClearBuilderFiles();
                 builderPage.ClickBuilderUploadFileButton();
                 Thread.Sleep(1000);
-                // ??? builderPage.SelectFileUpload(filePath + fileName);
+                builderPage.SelectFileUpload(filePath + fileName);
                 Thread.Sleep(1000);
                 builderPage.ClickContinueCategoryDialog();
                 Thread.Sleep(1000);
@@ -577,7 +577,7 @@ namespace SICorp.Test.Builder
                     var description = "fsb-text";
                     builderPage.ClickUploadFinancialStatementsOfTheBuilder(filePath + fileName);
                     Thread.Sleep(2000);
-                    // ??? builderPage.SelectFileUpload(filePath + fileName);
+                    builderPage.SelectFileUpload(filePath + fileName);
                     Thread.Sleep(2000);
                     builderPage.SetDescriptionInput(description);
                     Thread.Sleep(2000);
@@ -618,7 +618,7 @@ namespace SICorp.Test.Builder
                     var filePath = Common.FilePath;
                     var description = "sensitive-text";
                     builderPage.ClickUploadSensitive(filePath + Common.FileName1);
-                    // ??? builderPage.SelectFileUpload(filePath + Common.FileName1);
+                    builderPage.SelectFileUpload(filePath + Common.FileName1);
                     builderPage.SetDescriptionInput(description);
                     builderPage.ClickContinue();
                     builderPage.WaitForUploadFinancialStatement();
@@ -1332,7 +1332,7 @@ namespace SICorp.Test.Builder
 
             var filePath = Common.FilePath;
             var fileName = "test.txt";
-            // ??? builderPage.SelectFileUpload(filePath + fileName);
+            builderPage.SelectFileUpload(filePath + fileName);
             builderPage.ClickButtonRequestNewBuilder();
 
             var isExistBuilderInTable = builderPage.CheckBuilderExistInRequestNewBuilderTable(builderName, abnacn);
@@ -1586,7 +1586,7 @@ namespace SICorp.Test.Builder
                 {
                     var fileName = files[0];
                     builderPage.ClickUploadLastDoi();
-                    // ??? builderPage.SelectFileUpload(fileName);
+                    builderPage.SelectFileUpload(fileName);
                     builderPage.WaitTillUploadDialogClose();
                     Assert.IsTrue(builderPage.CheckStatusActiveLastDoi());
                     builderPage.ClickDownloadLastDoi();
@@ -1796,7 +1796,7 @@ namespace SICorp.Test.Builder
         private void UploadFileAttDivFinancialStatements(string file)
         {
             builderPage.ClickUploadFinancialStatementsOfTheBuilder(file);
-            // ??? builderPage.SelectFileUpload(file);
+            builderPage.SelectFileUpload(file);
             builderPage.SetDescriptionInput(Common.Description);
             builderPage.ClickContinue();
             Thread.Sleep(5000);
@@ -3848,7 +3848,7 @@ namespace SICorp.Test.Builder
                 {
                     var fileName = files[0];
                     builderPage.ClickUploadFirstDoi();
-                    // ??? builderPage.SelectFileUpload(fileName);
+                    builderPage.SelectFileUpload(fileName);
                     builderPage.WaitTillUploadDialogClose();
                     Assert.IsTrue(builderPage.CheckStatusActiveLastDoi());
                     builderPage.ClickDownloadLastDoi();
@@ -3978,7 +3978,7 @@ namespace SICorp.Test.Builder
                 {
                     var fileName = files[0];
                     builderPage.ClickUploadFirstDoi();
-                    // ??? builderPage.SelectFileUpload(fileName);
+                    builderPage.SelectFileUpload(fileName);
                     builderPage.WaitTillUploadDialogClose();
                     Assert.IsTrue(builderPage.CheckStatusActiveLastDoi());
                     builderPage.ClickDownloadLastDoi();
@@ -4693,7 +4693,8 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void VerifyOfferTermsButtonIsAvaiableForNewAssessmentByDeclined()
         {
-            VerifyOfferTermsUW_DeclinedByEligibilityAssessment(EligibilityAssessmentStatus.Declined);
+            string licenceNumber = "164951C";
+            VerifyOfferTermsUW_DeclinedByEligibilityAssessment(EligibilityAssessmentStatus.Declined, licenceNumber);
         }
 
         // HWIT-4726
@@ -4703,7 +4704,8 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void VerifyOfferTermsButtonIsAvaiableForNewAssessmentByTermsAccepted()
         {
-            VerifyOfferTermsUW_DeclinedByEligibilityAssessment(EligibilityAssessmentStatus.TermsAccepted);
+            string licenceNumber = "164951C";
+            VerifyOfferTermsUW_DeclinedByEligibilityAssessment(EligibilityAssessmentStatus.TermsAccepted, licenceNumber);
         }
 
         // HWIT-4727
@@ -4713,7 +4715,8 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void VerifyOfferTermsButtonByUW_Declined_Broker_TermsAccepted_OJV_OJN_GreaterZero()
         {
-            VerifyOfferTermsButton_UW_Declined_By_OpenJobAndEAStatus(Common.Value5, Common.Value2, EligibilityAssessmentStatus.TermsAccepted);
+            string licenceNumber = "164951C";
+            VerifyOfferTermsButton_UW_Declined_By_OpenJobAndEAStatus(Common.Value5, Common.Value2, EligibilityAssessmentStatus.TermsAccepted, licenceNumber);
         }
 
         // HWIT-4728
@@ -4723,7 +4726,8 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void VerifyOfferTermsButtonByUW_Declined_Broker_Declined_OJV_OJN_GreaterZero()
         {
-            VerifyOfferTermsButton_UW_Declined_By_OpenJobAndEAStatus(Common.Value6, Common.Value2, EligibilityAssessmentStatus.Declined);
+            string licenceNumber = "164951C";
+            VerifyOfferTermsButton_UW_Declined_By_OpenJobAndEAStatus(Common.Value6, Common.Value2, EligibilityAssessmentStatus.Declined, licenceNumber);
         }
 
         // HWIT-4729
@@ -4733,7 +4737,8 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void VerifyOfferTermsButtonByUW_Approved_Broker_Accepted_OJV_OJN_Zero()
         {
-            VerifyOfferTermsUW_Approved_Zero_ByEligibilityAssessment(EligibilityAssessmentStatus.TermsAccepted);
+            string licenceNumber = "164951C";
+            VerifyOfferTermsUW_Approved_Zero_ByEligibilityAssessment(EligibilityAssessmentStatus.TermsAccepted, licenceNumber);
         }
 
         // HWIT-4730
@@ -4743,7 +4748,8 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void VerifyOfferTermsButtonByUW_Approved_Broker_Declined_OJV_OJN_Zero()
         {
-            VerifyOfferTermsUW_Approved_Zero_ByEligibilityAssessment(EligibilityAssessmentStatus.Declined);
+            string licenceNumber = "164951C";
+            VerifyOfferTermsUW_Approved_Zero_ByEligibilityAssessment(EligibilityAssessmentStatus.Declined, licenceNumber);
         }
 
         // HWIT-4731
@@ -4753,7 +4759,8 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void VerifyOfferTermsButtonByUW_Approved_Broker_Accepted_OJV_OJN_GreaterZero()
         {
-            InitLoginToOverallOutcomeScreen();
+            string licenceNumber = "164951C";
+            InitLoginToOverallOutcomeScreen(licenceNumber);
 
             // 9.2 HBCF Approved Open Job Limit Value: 2000000
             // 9.3 HBCF Approved Open Job Limit Number: 5
@@ -4772,59 +4779,62 @@ namespace SICorp.Test.Builder
             }
 
             // 12. Verify the button - "Generate Eligibility" button is still disabled. 
-            if (builderPage.IsEnabledGenerateEligibilityButton())
+            if (OverallOutcomeService.IsEnabledGenerateEligibilityButton())
             {
                 Assert.Fail(string.Format(MessageCommon.MsgEnabled, Common.GenerateEligibilityButton));
             }
 
-            // 13.1. Select 'Terms Accepted' from 'Eligibility Assessment Status' field drop-down available in 'Outcome Details' subsection on Overall outcome screen 
-            builderPage.SetValueEligibilityAssessmentStatusDll(EligibilityAssessmentStatus.TermsAccepted);
-
-            // 13.2. Click "Save outcome details" 
-            builderPage.ClickSaveOutcomeDetailsButton();
-            builderPage.WaitTillBusyDialogClose();
-            Thread.Sleep(3000);
-
-            // 13.3. Immediately the "Finalise Assessment" button is enabled.
-            if (!builderPage.IsEnabledFinaliseAssessmentButton())
-            {
-                Assert.Fail(string.Format(MessageCommon.MsgDisabled, Common.FinaliseAssessmentButton));
-            }
-
             // 14.1. Verify the "Offer Terms" button is enabled under 'Outcome Details' screen. 
-            if (!builderPage.IsEnabledOfferTermsButton())
+            if (!OverallOutcomeService.IsEnabledOfferTermsButton())
             {
                 Assert.Fail(string.Format(MessageCommon.MsgDisabled, Common.OfferTermsButton));
             }
 
             // 14.2 & 15. Click 'send'. On the screen, below message pops up - The email has been queued for sending by the email service. 
             ClickOfferTermsButtonAndSendMail();
-            
+
+            // 13.1. Select 'Terms Accepted' from 'Eligibility Assessment Status' field drop-down available in 'Outcome Details' subsection on Overall outcome screen 
+            OverallOutcomeService.SetValueEligibilityAssessmentStatusDll(EligibilityAssessmentStatus.TermsAccepted);
+
+            // 13.2. Click "Save outcome details" 
+            OverallOutcomeService.ClickSaveOutcomeDetailsButton();
+            builderPage.WaitTillBusyDialogClose();
+            Thread.Sleep(3000);
+
+            // 13.3. Immediately the "Finalise Assessment" button is enabled.
+            if (!OverallOutcomeService.IsEnabledFinaliseAssessmentButton())
+            {
+                Assert.Fail(string.Format(MessageCommon.MsgDisabled, Common.FinaliseAssessmentButton));
+            }
+
             // 16.Verify the " Next Planned Eligibility Review Date" is blank.
-            if (!builderPage.IsBlankNextPlanedReviewDate())
+            if (!OverallOutcomeService.IsBlankNextPlanedReviewDate())
             {
                 Assert.Fail(string.Format(MessageCommon.MsgBlank, Common.NextPlanedReviewDate));
             }
 
             // 17.1. Verify the "Finalise Assessment " button is AVAILABLE. 
-            if (!builderPage.IsEnabledFinaliseAssessmentButton())
+            if (!OverallOutcomeService.IsEnabledFinaliseAssessmentButton())
             {
                 Assert.Fail(string.Format(MessageCommon.MsgEnabled, Common.FinaliseAssessmentButton));
             }
 
+            // Update to met before Finalise Assessment
+            OverallOutcomeService.UpdateToMetIfIsNotMet();
+
             // 17.2. Click the finalise button
-            builderPage.ClickFinaliseAssessmentButton();
+            OverallOutcomeService.ClickFinaliseAssessmentButton();
             builderPage.WaitTillBusyDialogClose();
             Thread.Sleep(2000);
 
             // 17.3. Immediately "Generate Eligibility" button is ENABLED.
-            if (!builderPage.IsEnabledGenerateEligibilityButton())
+            if (!OverallOutcomeService.IsEnabledGenerateEligibilityButton())
             {
                 Assert.Fail(string.Format(MessageCommon.MsgDisabled, Common.GenerateEligibilityButton));
             }
 
             // 18.1. Click Generate Eligibility 
-            builderPage.ClickGenerateEligibilityButton();
+            OverallOutcomeService.ClickGenerateEligibilityButton();
 
             // 18.2. this will take the user to the "Eligibility Details screen. Select the checkbox for 'Open Job Values checked?
             builderPage.SetCheckBoxOpenJobValueCheck(true);
@@ -4840,7 +4850,8 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void VerifyOfferTermsButtonByUW_Approved_Broker_Declined_OJV_OJN_GreaterZero()
         {
-            InitLoginToOverallOutcomeScreen();
+            string licenceNumber = "164951C";
+            InitLoginToOverallOutcomeScreen(licenceNumber);
 
             // 9.2 HBCF Approved Open Job Limit Value: 2000000
             // 9.3 HBCF Approved Open Job Limit Number: 5
@@ -4874,7 +4885,7 @@ namespace SICorp.Test.Builder
             }
 
             // 15.1. Select 'DECLINED' from 'Eligibility Assessment Status' field drop-down available in 'Outcome Details' subsection on Overall outcome screen
-            builderPage.SetValueEligibilityAssessmentStatusDll(EligibilityAssessmentStatus.TermsAccepted);
+            OverallOutcomeService.SetValueEligibilityAssessmentStatusDll(EligibilityAssessmentStatus.TermsAccepted);
 
             // 15.2. Click "Save outcome details".
             builderPage.ClickSaveOutcomeDetailsButton();
@@ -4898,6 +4909,9 @@ namespace SICorp.Test.Builder
             {
                 Assert.Fail(string.Format(MessageCommon.MsgEnabled, Common.FinaliseAssessmentButton));
             }
+
+            // Update to met before Finalise Assessment
+            OverallOutcomeService.UpdateToMetIfIsNotMet();
 
             // 17.2. Click the finalise button
             builderPage.ClickFinaliseAssessmentButton();
@@ -4947,7 +4961,7 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void VerifyFinancialInputsScreenChangingTheYearEndMonthToJune()
         {
-            VerifyFinancialInputsScreenChangingTheYearEndMonth((int)TicketEnum.T4743);
+            VerifyFinancialInputsScreenChangingTheYearEndMonth((int)TicketEnum.T4743, true);
         }
 
         // HWIT-4757
@@ -5014,7 +5028,8 @@ namespace SICorp.Test.Builder
         /// Verify Financial Inputs screen on changing the year end month by ticket
         /// </summary>
         /// <param name="yemByTicket">#4740, #4741, #4743, #4757, #4758, #4759, #4760, #4761, #4762</param>
-        private void VerifyFinancialInputsScreenChangingTheYearEndMonth(int yemByTicket)
+        /// <param name="isAddNewNonBuilder">true is add, otherelse not add</param>
+        private void VerifyFinancialInputsScreenChangingTheYearEndMonth(int yemByTicket, bool isAddNewNonBuilder = false)
         {
             var licenceNumber = "275960C";
 
@@ -5117,7 +5132,7 @@ namespace SICorp.Test.Builder
                     lstValue = new List<string>() { FinancialYearDDL.Sep_2019_YTD, FinancialYearDDL.Year2019
                         , FinancialYearDDL.Year2018, FinancialYearDDL.Year2017, FinancialYearDDL.Year2016 };
 
-                    // Sep-19	Jun-18	Jun-17	Jun-16 
+                    // Sep-19	Jun-19	Jun-18	Jun-17 
                     lstYearMonthLabel = Common.ListYearMonthJune_Sep;
 
                     // Financial year being assessed = 'Sep-2019-YTD'
@@ -5230,10 +5245,11 @@ namespace SICorp.Test.Builder
 
                 // Click the orange button to navigate to the builder details screen
                 builderPage.ClickViewBuilder();
+                Thread.Sleep(5000);
 
                 // 2.3. Update the dropdown value to December
                 BuilderDetailsService.SetValueForYearEndMonthDll(yearEndMonth);
-                Thread.Sleep(1000);
+                Thread.Sleep(3000);
 
                 // 2.4. Click 'save builder details'
                 BuilderDetailsService.ClickBuiderDetailSaveButton();
@@ -5302,7 +5318,9 @@ namespace SICorp.Test.Builder
 
             // 11. Enter below values for june 17 and click save: --> sales: 5,000,000, -- > Opening Stock: 250,000
             FinancialInputsService.SetValueForFirstTextBoxBySectionName(SectionNameFinancialInputs.Sales, Common.SalesRow);
+            Thread.Sleep(1000);
             FinancialInputsService.SetValueForFirstTextBoxBySectionName(SectionNameFinancialInputs.OpeningStock, Common.OpeningStock);
+            Thread.Sleep(1000);
 
             // 11.2. Click Save button in Sales section
             FinancialInputsService.ClickSaveButtonBySectionName(SectionNameFinancialInputs.Sales);
@@ -5310,9 +5328,9 @@ namespace SICorp.Test.Builder
             Thread.Sleep(3000);
 
             // 12. If there is already a 'Non-Builder' for the group, skip to step 13, else Click on "Add New Non-Builder Financial", this will open a new popup. Enter the below details and click save.
-            if (!FinancialInputsService.IsExistsNonBuilderFinancial())
+            if (isAddNewNonBuilder || !FinancialInputsService.IsExistsNonBuilderFinancial())
             {
-                AddNewNonBuilderFinancial(Common.LblComment, "888666444333", false);
+                AddNewNonBuilderFinancial(Common.LblComment, "888666444333");
                 Thread.Sleep(5000);
             }
 
@@ -5379,18 +5397,12 @@ namespace SICorp.Test.Builder
 
             // 20. Click 'send'. On the screen, below message pops up - The email has been queued for sending by the email service. 
             ClickSendMailAndOkOfferTermsDialog();
-            Thread.Sleep(3000);
-
-            // Check still not click 'OK' button then click again
-            if (!OverallOutcomeService.IsEnabledGroupOverallOutcomeScreen())
-            {
-                OverallOutcomeService.ClickOkOfferTermsEmailDialog();
-            }
+            Thread.Sleep(5000);
 
             // Navigate to group overall outcome screen
             builderPage.NavigateGroupOverallOutcomeScreen();
 
-            // Check if navigate group Overall Outcome screen?
+            // Check still not navigate group Overall Outcome screen then click it again
             if (!OverallOutcomeService.IsEnabledEligibilityAssessmentStatusDll())
             {
                 builderPage.NavigateGroupOverallOutcomeScreen();
@@ -5399,12 +5411,12 @@ namespace SICorp.Test.Builder
             // 21. Select 'Terms Accepted' from 'Eligibility Assessment Status' and click "Save outcome details". Immediately the "Finalise Assessment" button is enabled. 
             OverallOutcomeService.SetValueEligibilityAssessmentStatusDll(EligibilityAssessmentStatus.TermsAccepted);
             builderPage.WaitTillBusyDialogClose();
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
 
             // 21.2. Click "Save outcome details".
             OverallOutcomeService.ClickSaveGroupOutcomeDetailsButtonForGTA();
             builderPage.WaitTillBusyDialogClose();
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
 
             // 22. Verify the "Finalise Assessment " button is AVAILABLE. 
             if (!OverallOutcomeService.IsEnabledFinaliseAssessmentButton())
@@ -5667,14 +5679,10 @@ namespace SICorp.Test.Builder
         /// </summary>
         /// <param name="entityName">Entity Name</param>
         /// <param name="abnNumber">ABN Number</param>
-        /// <param name="isDelete">True if exists ABN Number, otherwise False</param>
-        private void AddNewNonBuilderFinancial(string entityName, string abnNumber, bool isDelete = true)
+        private void AddNewNonBuilderFinancial(string entityName, string abnNumber)
         {
-            if (isDelete)
-            {
-                // Check exists ABN number then delete this and then add its
-                FinancialInputsService.DeleteNonBuildersByABNNumber(abnNumber);
-            }
+            // Check exists ABN number then delete this and then add its
+            FinancialInputsService.DeleteNonBuildersByABNNumber(abnNumber);
 
             // Click Add New Non Builder Financial button
             FinancialInputsService.ClickAddNewNonBuilderFinancial();
@@ -5794,6 +5802,7 @@ namespace SICorp.Test.Builder
                 // Navigate to Track Record screen
                 builderPage.ClickMenuTrackRecord();
                 builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
             }
 
             // Check has not value then input
@@ -5817,9 +5826,10 @@ namespace SICorp.Test.Builder
         /// 4729-Verify the 'Offer Terms' button is available for NEW Assessments(UW-Approved, Broker-Accepted, OJV/OJN-0/0
         /// </summary>
         /// <param name="eligibilityAssessmentStatus">Eligibility Assessment status</param>
-        public void VerifyOfferTermsUW_Approved_Zero_ByEligibilityAssessment(string eligibilityAssessmentStatus)
+        /// <param name="licenceNumber">Licence number</param>
+        public void VerifyOfferTermsUW_Approved_Zero_ByEligibilityAssessment(string eligibilityAssessmentStatus, string licenceNumber)
         {
-            InitLoginToOverallOutcomeScreen();
+            InitLoginToOverallOutcomeScreen(licenceNumber);
 
             // 9.2 HBCF Approved Open Job Limit Value: 0
             // 9.3 HBCF Approved Open Job Limit Number: 0 
@@ -5843,6 +5853,15 @@ namespace SICorp.Test.Builder
                 Assert.Fail(string.Format(MessageCommon.MsgEnabled, Common.GenerateEligibilityButton));
             }
 
+            // 14.1. Verify the "Offer Terms" button is enabled under 'Outcome Details' screen. 
+            if (!builderPage.IsEnabledOfferTermsButton())
+            {
+                Assert.Fail(string.Format(MessageCommon.MsgDisabled, Common.OfferTermsButton));
+            }
+
+            // 14.2 & 15. Click 'send'. On the screen, below message pops up - The email has been queued for sending by the email service. 
+            ClickOfferTermsButtonAndSendMail();
+
             // 13.1. Select 'Terms Accepted' from 'Eligibility Assessment Status' field drop-down available in 'Outcome Details' subsection on Overall outcome screen 
             OverallOutcomeService.SetValueEligibilityAssessmentStatusDll(eligibilityAssessmentStatus);
             builderPage.WaitTillBusyDialogClose();
@@ -5852,15 +5871,6 @@ namespace SICorp.Test.Builder
             builderPage.ClickSaveOutcomeDetailsButton();
             builderPage.WaitTillBusyDialogClose();
             Thread.Sleep(3000);
-
-            // 14.1. Verify the "Offer Terms" button is enabled under 'Outcome Details' screen. 
-            if (!builderPage.IsEnabledOfferTermsButton())
-            {
-                Assert.Fail(string.Format(MessageCommon.MsgDisabled, Common.OfferTermsButton));
-            }
-
-            // 14.2 & 15. Click 'send'. On the screen, below message pops up - The email has been queued for sending by the email service. 
-            ClickOfferTermsButtonAndSendMail();
 
             // 16.Verify the " Next Planned Eligibility Review Date" is blank.
             if (!builderPage.IsBlankNextPlanedReviewDate())
@@ -5888,9 +5898,10 @@ namespace SICorp.Test.Builder
         /// <param name="ojv"></param>
         /// <param name="ojn"></param>
         /// <param name="eligibilityAssessmentStatus"></param>
-        private void VerifyOfferTermsButton_UW_Declined_By_OpenJobAndEAStatus(string ojv, string ojn, string eligibilityAssessmentStatus)
+        /// <param name="licenceNumber"></param>
+        private void VerifyOfferTermsButton_UW_Declined_By_OpenJobAndEAStatus(string ojv, string ojn, string eligibilityAssessmentStatus, string licenceNumber)
         {
-            InitLoginToOverallOutcomeScreen();
+            InitLoginToOverallOutcomeScreen(licenceNumber);
 
             // 9.2 HBCF Approved Open Job Limit Value: 2000000
             // 9.3 HBCF Approved Open Job Limit Number: 5
@@ -5914,14 +5925,6 @@ namespace SICorp.Test.Builder
                 Assert.Fail(string.Format(MessageCommon.MsgEnabled, Common.GenerateEligibilityButton));
             }
 
-            // 13. Select 'Terms Accepted' from 'Eligibility Assessment Status' field drop-down 
-            builderPage.SetValueEligibilityAssessmentStatusDll(eligibilityAssessmentStatus);
-
-            // 13.2. Click "Save outcome details" on the 'Outcome Details' subsection.
-            builderPage.ClickSaveOutcomeDetailsButton();
-            Thread.Sleep(3000);
-            builderPage.WaitTillBusyDialogClose();
-
             // 14. Verify the "Offer Terms" button is enabled under 'Outcome Details' screen.
             if (!builderPage.IsEnabledOfferTermsButton())
             {
@@ -5931,6 +5934,16 @@ namespace SICorp.Test.Builder
             // 14.2 & 15. Click 'send'. On the screen, below message pops up - The email has been queued for sending by the email service. 
             ClickOfferTermsButtonAndSendMail();
 
+            // 13. Select 'Terms Accepted' from 'Eligibility Assessment Status' field drop-down 
+            OverallOutcomeService.SetValueEligibilityAssessmentStatusDll(eligibilityAssessmentStatus);
+            builderPage.WaitTillBusyDialogClose();
+            Thread.Sleep(5000);
+
+            // 13.2. Click "Save outcome details" on the 'Outcome Details' subsection.
+            builderPage.ClickSaveOutcomeDetailsButton();
+            builderPage.WaitTillBusyDialogClose();
+            Thread.Sleep(5000);
+
             // 16. Verify the " Next Planned Eligibility Review Date" is blank. 
             if (!builderPage.IsBlankNextPlanedReviewDate())
             {
@@ -5938,13 +5951,13 @@ namespace SICorp.Test.Builder
             }
 
             // 17.1. Verify the 'Finalise assessment' button is NOT available.
-            if (builderPage.IsEnabledFinaliseAssessmentButton())
+            if (OverallOutcomeService.IsEnabledFinaliseAssessmentButton())
             {
                 Assert.Fail(string.Format(MessageCommon.MsgDisabled, Common.FinaliseAssessmentButton));
             }
 
             // 17.2. Since the user cannot click the finalise button, "Generate Eligibility" button also remains DISABLED.
-            if (builderPage.IsEnabledGenerateEligibilityButton())
+            if (OverallOutcomeService.IsEnabledGenerateEligibilityButton())
             {
                 Assert.Fail(string.Format(MessageCommon.MsgEnabled, Common.GenerateEligibilityButton));
             }
@@ -5954,14 +5967,16 @@ namespace SICorp.Test.Builder
         /// 4726-Verify the 'Offer Terms' button is available for NEW Assessments (UW-Declined, Broker-Terms Accepted, OJV/OJN-0/0
         /// 4725-Verify the 'Offer Terms' button is available for NEW Assessments(UW-Declined, Broker-Declined, OJV/OJN-0/0
         /// </summary>
-        /// <param name="eligibilityAssessmentStatus"></param>
-        public void VerifyOfferTermsUW_DeclinedByEligibilityAssessment(string eligibilityAssessmentStatus)
+        /// <param name="eligibilityAssessmentStatus">Eligibility assessment status</param>
+        /// <param name="licenceNumber">Licence number</param>
+        public void VerifyOfferTermsUW_DeclinedByEligibilityAssessment(string eligibilityAssessmentStatus, string licenceNumber = "")
         {
-            InitLoginToOverallOutcomeScreen();
+            InitLoginToOverallOutcomeScreen(licenceNumber);
 
             // 9.2 HBCF Approved Open Job Limit Value: 0
             // 9.3 HBCF Approved Open Job Limit Number: 0 
             builderPage.SetValueForHBCFOpenJobLimit(Common.Value3, Common.Value3);
+            Thread.Sleep(3000);
 
             // 10. Select the option under Accept or adjust outcome: Underwriter Assessment Outcome (provide notes below) - Declined 
             builderPage.SetValueForUnderWriterAssessmentOutcomeDropDown(UnderwriterAssessmentOutcome.Declined);
@@ -6051,22 +6066,31 @@ namespace SICorp.Test.Builder
         private void ClickSendMailAndOkOfferTermsDialog()
         {
             // Click 'send'. 
-            OverallOutcomeService.ClickSendOfferTermsButton();
-            //builderPage.WaitTillQueueingEmailDialogClose();
-            Thread.Sleep(10000);
+            OverallOutcomeService.ClickBtnByBtnNameInOfferTermsEmailDialog(Common.LblSend);
+            // Check still not click 'Send' button
+            if (OverallOutcomeService.IsDisplayBtnByBtnName(Common.LblSend.ToUpper()))
+            {
+                OverallOutcomeService.ClickBtnByBtnNameInOfferTermsEmailDialog(Common.LblSend);
+            }
 
             // On the screen, below message pops up - The email has been queued for sending by the email service. 
-            OverallOutcomeService.ClickOkOfferTermsEmailDialog();
+            OverallOutcomeService.ClickBtnByBtnNameInOfferTermsEmailDialog("OK");
+
+            // Check still not click 'OK' button then click again
+            if (OverallOutcomeService.IsDisplayBtnByBtnName("OK"))
+            {
+                OverallOutcomeService.ClickBtnByBtnNameInOfferTermsEmailDialog("OK");
+            }
         }
-        
+
         /// <summary>
         /// Init from login to Overall Outcome sreen
         /// Apply for: #4725, #4726, #4727, #4728, #4729, #4730, #4731, #4732
         /// </summary>
-        private void InitLoginToOverallOutcomeScreen()
+        private void InitLoginToOverallOutcomeScreen(string licenceNumber = "")
         {
             // 1. Login
-            InitLogin();
+            InitLogin(licenceNumber);
 
             // Search with licence number
             if (!builderPage.ResultSearch())
@@ -6074,15 +6098,17 @@ namespace SICorp.Test.Builder
                 Assert.Fail(MessageCommon.MsgNotRecord);
             }
 
-            // 2. Click on the blue tick to the left of the builder name 
+            // 2. Click on the blue tick to the left of the builder name
+            Thread.Sleep(3000);
             builderPage.ClickViewAssessments();
+            Thread.Sleep(3000);
 
             // 3. In the assessments table - click the "Begin New Assessment" OR click "edit" link for the assessment where EA finalised = No.
             // Check exists row with EA Finalised = No then edit that row else add new Assessement
             if (builderPage.GetColTextOfAssessmentTable(1, 11).Contains(Common.NO))
             {
                 // 3. In the assessments table - click the edit link for the assessment where EA finalised = No 
-                builderPage.ClickEditLinkAssessment();
+                SearchService.ClickEditLinkAssessment();
                 builderPage.WaitTillBusyDialogClose();
             }
             else
@@ -6099,20 +6125,31 @@ namespace SICorp.Test.Builder
             }
 
             // 4.1. Financial year being assessed = '2019' 
-            builderPage.SetValueForFinancialYearDDL(FinancialYearDDL.Year2019);
+            InitiateReviewService.SetValueForFinancialYearDDL(FinancialYearDDL.Year2019);
 
             // 4.2. Assessment Type = NEW 
-            builderPage.SetValueForAssessmentTypeDLL(AssessmentTypeDLL.New);
+            InitiateReviewService.SetValueForAssessmentTypeDLL(AssessmentTypeDLL.New);
+
+            // 4.2.1. Scheduled assessment date is current
+            InitiateReviewService.SetValueScheduledAssessmentDate(DateTime.Now.AddHours(3).ToString(Common.FormatDate2));
 
             // 4.3. Comment = current date is 28 October,2019 
-            builderPage.SetValueCommentTxt(DateTime.Now.ToString());
+            InitiateReviewService.SetValueCommentTxt(DateTime.Now.ToString());
 
             // 4.4. Click 'Save' button
-            builderPage.ClickSaveButtonInitiateReview();
+            InitiateReviewService.ClickSaveButtonInitiateReview();
+            Thread.Sleep(5000);
 
             // 5. Click the Eligibility Details menu item to navigate to the 'Eligibility Details' screen
             builderPage.ClickEligibilityDetails();
             builderPage.WaitTillBusyDialogClose();
+            Thread.Sleep(3000);
+            if (!EligibilityDetailsService.IsEnabledCopyAllLimitsLink())
+            {
+                builderPage.ClickEligibilityDetails();
+                builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
+            }
 
             // 5.1. Click "copy all" below "Requested/Projected $".
             builderPage.ClickCopyAllLimitsLink();
@@ -6137,14 +6174,22 @@ namespace SICorp.Test.Builder
             // 6. Click the 'save' button first and then click 'begin assessment button' 
             builderPage.ClickButtonSaveEligibilityReview();
             builderPage.WaitTillBusyDialogClose();
-            Thread.Sleep(13000);
             var isTrackRecordScreen = false;
-            if (builderPage.VerifyBeginAssessmentIsEnabled())
+            if (!builderPage.VerifyBeginAssessmentIsEnabled())
+            {
+                // Maybe Network is not good so don't still click 'Save' button
+                if (!builderPage.IsTrackRecordEnable())
+                { 
+                    builderPage.ClickButtonSaveEligibilityReview();
+                }
+            }
+            Thread.Sleep(10000);
+
+            if (!builderPage.IsTrackRecordEnable())
             {
                 builderPage.ClickBeginAssessment();
                 builderPage.WaitTillBusyDialogClose();
                 Thread.Sleep(3000);
-
                 isTrackRecordScreen = true;
             }
 
@@ -6176,7 +6221,7 @@ namespace SICorp.Test.Builder
             builderPage.SetValueOpeningStock(Common.OpeningStock);
 
             // 8.3. Click 'Save' button
-            builderPage.ClickSaleSaveButton();
+            FinancialInputsService.ClickSaveButtonBySectionName(SectionNameFinancialInputs.Sales);
             builderPage.WaitTillBusyDialogClose();
 
             // 9. Navigate to the overall screen and enter the below details in Outcome Details and click 'save' 

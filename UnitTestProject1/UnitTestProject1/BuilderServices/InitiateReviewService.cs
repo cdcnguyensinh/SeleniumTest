@@ -36,6 +36,15 @@ namespace SICorp.Test.BuilderServices
         }
 
         /// <summary>
+        /// Set value for Scheduled Assessment Date
+        /// </summary>
+        /// <param name="value"></param>
+        public static void SetValueScheduledAssessmentDate(string value)
+        {
+            Util.SetValue(InitiateReviewProp.ScheduledAssessmentDate, value);
+        }
+
+        /// <summary>
         /// Click Save Initiate Review button
         /// </summary>
         public static void ClickSaveButtonInitiateReview()

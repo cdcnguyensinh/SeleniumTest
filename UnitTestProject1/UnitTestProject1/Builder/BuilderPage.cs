@@ -1,4 +1,4 @@
-﻿//using AutoIt;
+﻿using AutoIt;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
@@ -597,17 +597,7 @@ namespace SICorp.Test.Builder
         By SiteStreetName = By.CssSelector("input[name='SiteStreetName']");
         By PolicyNumber = By.CssSelector("input[name='PolicyNumber']");
         By GenerateEligibilityButton = By.Id("MainContent_eatOverallOutcomeControl_btnGenerateElgibility");
-
-        /// <summary>
-        /// Generate Eligibility button for GTA
-        /// </summary>
-        By GenerateEligibilityButtonGTA = By.Id("MainContent_eatGroupOverallOutcomeControl_btnGenerateElgibility");
-
-        /// <summary>
-        /// Eligibility Assessment status dropdownlist in Overall Outcome screen
-        /// </summary>
-        By EligibilityAssessmentStatusDLL = By.Id("MainContent_eatOverallOutcomeControl_mo_r7c2_ddl");
-
+        
         /// <summary>
         /// Next planed review date
         /// </summary>
@@ -1579,7 +1569,6 @@ namespace SICorp.Test.Builder
 
             var lstTdElem = GetTdElement(lstTrElem[rowIndex]);
             return lstTdElem[colIndex].Text;
-
         }
 
         public int CheckEditLinkAssessment()
@@ -4480,16 +4469,7 @@ namespace SICorp.Test.Builder
         {
             Util.Click(GenerateEligibilityButton);
         }
-
-        /// <summary>
-        /// Change value of Eligibility Assessment status
-        /// </summary>
-        /// <param name="value">Value</param>
-        public void SetValueEligibilityAssessmentStatusDll(string value)
-        {
-            Util.Select(EligibilityAssessmentStatusDLL, value);
-        }
-
+        
         public bool IsBlankNextPlanedReviewDate()
         {
             try
@@ -4851,18 +4831,18 @@ namespace SICorp.Test.Builder
         #endregion
 
         #region AUTOITX
-        //public void SelectFileUpload(string filePath)
-        //{
-        //    //Select file to upload            
-        //    AutoItX.WinActivate("Open");
-        //    Thread.Sleep(1000);
-        //    //AutoItX.Send(AppDomain.CurrentDomain.BaseDirectory + "\\" + fileName);
-        //    AutoItX.Send(filePath);
-        //    Thread.Sleep(2000);
-        //    //Click key ENTER for upload file
-        //    AutoItX.Send("{ENTER}");
-        //    Thread.Sleep(2000);
-        //}
+        public void SelectFileUpload(string filePath)
+        {
+            //Select file to upload            
+            AutoItX.WinActivate("Open");
+            Thread.Sleep(1000);
+            //AutoItX.Send(AppDomain.CurrentDomain.BaseDirectory + "\\" + fileName);
+            AutoItX.Send(filePath);
+            Thread.Sleep(2000);
+            //Click key ENTER for upload file
+            AutoItX.Send("{ENTER}");
+            Thread.Sleep(2000);
+        }
         #endregion
 
         #region Method of Accept or adjust outcome

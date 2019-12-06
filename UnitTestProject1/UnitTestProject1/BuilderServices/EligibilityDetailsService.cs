@@ -132,5 +132,21 @@ namespace SICorp.Test.BuilderServices
         {
             Util.Click(EligibilityDetailsProp.GenerateCertificateOfEligibilityButton);
         }
+
+        /// <summary>
+        /// Is enabled Copy All button
+        /// </summary>
+        public static bool IsEnabledCopyAllLimitsLink()
+        {
+            try
+            {
+                return Util.IsEnable(EligibilityDetailsProp.CopyAllLimits);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }

@@ -23,6 +23,11 @@ namespace SICorp.Test.BuiderProperties
         public static By InitialCommentTxt = By.Id("MainContent_eatInitiateReviewControl_txtInitialComment");
 
         /// <summary>
+        /// Scheduled Assessment date
+        /// </summary>
+        public static By ScheduledAssessmentDate = By.Id("MainContent_eatInitiateReviewControl_dtpkScheduledAssessmentDate_TextBox");
+
+        /// <summary>
         /// Save Initiate Review button
         /// </summary>
         public static By SaveButtonInitiateReview = By.Id("MainContent_eatInitiateReviewControl_btnSave");

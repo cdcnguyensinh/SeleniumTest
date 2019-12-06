@@ -308,6 +308,7 @@ namespace SICorp.Test.BuilderServices
                 if (iBtn.Text.ToUpper().Contains(Common.LblSave.ToUpper()))
                 {
                     iBtn.Click();
+                    Thread.Sleep(3000);
                     return;
                 }
             }
@@ -349,11 +350,12 @@ namespace SICorp.Test.BuilderServices
                                 if (iDiv.Text.ToUpper().Contains(Common.LblClear.ToUpper()))
                                 {
                                     iDiv.Click();
-                                    Thread.Sleep(1000);
+                                    Thread.Sleep(3000);
 
                                     // Click Ok button in Confirmation dialog
                                     var okBtn = Util.GetElement(FinancialInputsProp.OkButtonInConfirmationDialogNonBuilders);
                                     okBtn.Click();
+                                    Thread.Sleep(3000);
                                     return;
                                 }
                             }

@@ -110,21 +110,6 @@ namespace SICorp.Test.BuiderProperties
         public static By OfferTermsButton = By.Id("MainContent_eatOverallOutcomeControl_btnOfferTerms");
 
         /// <summary>
-        /// Send Offer terms button
-        /// </summary>
-        public static By SendOfferTermsButton = By.CssSelector("div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > div.ui-dialog-buttonset > button > span");
-
-        ///// <summary>
-        ///// OK button after send mai in Ofer Terms dialog
-        ///// </summary>
-        //public static By OkButtonOffterTermsEmail = By.CssSelector("div[aria-describedby='masterOkDialog'] > div:nth-child(3)> div > button");
-
-        ///// <summary>
-        ///// Ofer Terms button
-        ///// </summary>
-        //public static By OfferTermsButton = By.CssSelector("#collapseOutcomeDetails > table > tbody> tr > td:nth-child(2) > input:nth-child(2)");
-
-        /// <summary>
         /// Eligibility Assessment status dropdownlist in OUTCOME DETAILS section for GTA
         /// </summary>
         public static By EligibilityAssessmentStatusDllGTA = By.Id("MainContent_eatGroupOverallOutcomeControl_ddlAssessmentStatus");
