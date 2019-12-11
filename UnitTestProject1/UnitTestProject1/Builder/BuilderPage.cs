@@ -1,4 +1,4 @@
-﻿using AutoIt;
+﻿//using AutoIt;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
@@ -4833,15 +4833,15 @@ namespace SICorp.Test.Builder
         #region AUTOITX
         public void SelectFileUpload(string filePath)
         {
-            //Select file to upload            
-            AutoItX.WinActivate("Open");
-            Thread.Sleep(1000);
-            //AutoItX.Send(AppDomain.CurrentDomain.BaseDirectory + "\\" + fileName);
-            AutoItX.Send(filePath);
-            Thread.Sleep(2000);
-            //Click key ENTER for upload file
-            AutoItX.Send("{ENTER}");
-            Thread.Sleep(2000);
+            ////Select file to upload            
+            //AutoItX.WinActivate("Open");
+            //Thread.Sleep(1000);
+            ////AutoItX.Send(AppDomain.CurrentDomain.BaseDirectory + "\\" + fileName);
+            //AutoItX.Send(filePath);
+            //Thread.Sleep(2000);
+            ////Click key ENTER for upload file
+            //AutoItX.Send("{ENTER}");
+            //Thread.Sleep(2000);
         }
         #endregion
 

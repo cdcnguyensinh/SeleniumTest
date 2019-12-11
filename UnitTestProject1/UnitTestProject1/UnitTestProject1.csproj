@@ -65,6 +65,7 @@
     <Compile Include="BuiderProperties\InitiateReviewProp.cs" />
     <Compile Include="BuiderProperties\OverallOutcomeProp.cs" />
     <Compile Include="BuiderProperties\ReportsProp.cs" />
+    <Compile Include="BuiderProperties\SearchProp.cs" />
     <Compile Include="BuiderProperties\TaskAdministrationProp.cs" />
     <Compile Include="BuiderProperties\TrackRecordProp.cs" />
     <Compile Include="BuilderServices\BuilderDetailsService.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="BuilderServices\InitiateReviewService.cs" />
     <Compile Include="BuilderServices\OverallOutcomeService.cs" />
     <Compile Include="BuilderServices\ReportsService.cs" />
+    <Compile Include="BuilderServices\SearchService.cs" />
     <Compile Include="BuilderServices\TaskAdministrationService.cs" />
     <Compile Include="BuilderServices\TrackRecordService.cs" />
     <Compile Include="Builder\BuilderPage.cs" />
