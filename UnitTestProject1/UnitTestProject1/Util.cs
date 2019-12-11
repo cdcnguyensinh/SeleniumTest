@@ -441,11 +441,16 @@ namespace SICorp.Test
     /// </summary>
     public class MemberInfo
     {
-        public const string Username = "CSCTestC";
-        public const string Username3 = "CSCTestE";
-        public const string Password = "xBA7SHg$5acY";
+        public const string UsernameC = "CSCTestC";
+        public const string PasswordC = "N@sB,a_7vS";
+        public const string UsernameE = "CSCTestE";
+        public const string PasswordE = "d7Q[EK]akJ";
         public const string Username2 = "nguyenv";
-        public const string Password2 = "Abc123456@";
+        public const string Password2 = "Test12345@12345";
+        public const string UserBrktst109 = "Brktst109";
+        public const string PassBrktst109 = "Summ3r20!9";
+
+        
     }
 
     /// <summary>

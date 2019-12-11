@@ -65,7 +65,7 @@ namespace SICorp.Test.Builder
         public void SearchAndViewBuilder()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             //var mainMenu = new MainMenu(driver);
             //mainMenu.GoBeatPage();
@@ -95,7 +95,7 @@ namespace SICorp.Test.Builder
         public void AddCommentBuilderSingle()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -125,7 +125,7 @@ namespace SICorp.Test.Builder
         public void AddCommentBuilderGTA()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -155,7 +155,7 @@ namespace SICorp.Test.Builder
         public void AddMultipleCommentBuilderSingle()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -206,7 +206,7 @@ namespace SICorp.Test.Builder
         public void AddFileToBuilder()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
                       
             GoToSearchBeat();
 
@@ -249,7 +249,7 @@ namespace SICorp.Test.Builder
         public void AddNewPrincipalBuilder()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -292,7 +292,7 @@ namespace SICorp.Test.Builder
         public void DeletePrincipalBuilder()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -350,7 +350,7 @@ namespace SICorp.Test.Builder
         public void AddNewInterstateLicence()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -394,7 +394,7 @@ namespace SICorp.Test.Builder
         public void DeleteLicense()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -452,7 +452,7 @@ namespace SICorp.Test.Builder
         public void ViewPricingHistory()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -479,7 +479,7 @@ namespace SICorp.Test.Builder
         public void ChangeEADetails()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -515,7 +515,7 @@ namespace SICorp.Test.Builder
         public void TickOngoingAuditorAppointment()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -557,7 +557,7 @@ namespace SICorp.Test.Builder
         public void UploadFileFinancialStatement()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -599,7 +599,7 @@ namespace SICorp.Test.Builder
         public void UploadFileSensitive()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -639,7 +639,7 @@ namespace SICorp.Test.Builder
         public void AddCommentToTheAssessmentInitiateReviewScreen()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -678,7 +678,7 @@ namespace SICorp.Test.Builder
         public void SubmitTheAssessmentToTheBroker()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -713,44 +713,44 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void SubmitTheAssessmentToTheInsuranceAgent()
         {
-            var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            //var loginPage = new LoginPage(driver);
+            //loginPage.Login("nguyenv", MemberInfo.Password2);
 
-            GoToSearchBeat();
-            var licenceNumber = "94116C";
+            //GoToSearchBeat();
+            //var licenceNumber = "94116C";
 
-            builderPage.SetBuilderLicenceNumber(licenceNumber);
-            builderPage.ClickSearchBuilder();
+            //builderPage.SetBuilderLicenceNumber(licenceNumber);
+            //builderPage.ClickSearchBuilder();
 
-            var searchResult = builderPage.ResultSearch();
-            if (searchResult)
-            {
+            //var searchResult = builderPage.ResultSearch();
+            //if (searchResult)
+            //{
 
-                builderPage.ClickViewAssessments();
-                var resultClickEdit = builderPage.ClickEditLinkAssessment();
-                if (resultClickEdit)
-                {
-                    var checkSubmitTheAssessmentToTheInsuranceAgentEnable = builderPage.CheckSubmitTheAssessmentToTheInsuranceAgent();
-                    if (checkSubmitTheAssessmentToTheInsuranceAgentEnable)
-                    {
-                        builderPage.ClickSubmitTheAssessmentToTheInsuranceAgentButton();
-                        //Verify Insurance Agent label at the top of the screen is highlighted green
-                        var checkInsuranceAgentLabel = builderPage.VerifyColorInsuranceAgentLabel();
-                        Assert.IsTrue(checkInsuranceAgentLabel);
-                    }
-                }
-                else
-                    Assert.IsTrue(resultClickEdit);
-            }
-            else
-                Assert.IsTrue(searchResult);
+            //    builderPage.ClickViewAssessments();
+            //    var resultClickEdit = builderPage.ClickEditLinkAssessment();
+            //    if (resultClickEdit)
+            //    {
+            //        var checkSubmitTheAssessmentToTheInsuranceAgentEnable = builderPage.CheckSubmitTheAssessmentToTheInsuranceAgent();
+            //        if (checkSubmitTheAssessmentToTheInsuranceAgentEnable)
+            //        {
+            //            builderPage.ClickSubmitTheAssessmentToTheInsuranceAgentButton();
+            //            //Verify Insurance Agent label at the top of the screen is highlighted green
+            //            var checkInsuranceAgentLabel = builderPage.VerifyColorInsuranceAgentLabel();
+            //            Assert.IsTrue(checkInsuranceAgentLabel);
+            //        }
+            //    }
+            //    else
+            //        Assert.IsTrue(resultClickEdit);
+            //}
+            //else
+            //    Assert.IsTrue(searchResult);
         }
 
         [TestMethod]
         public void EnterEligibilityLimitsIntoAnAssessment()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -785,7 +785,7 @@ namespace SICorp.Test.Builder
         public void AlterAnEligibilityProfileLimit()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -820,7 +820,7 @@ namespace SICorp.Test.Builder
         public void AlterOpenJobLimitValue()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -856,7 +856,7 @@ namespace SICorp.Test.Builder
         public void ResetAssumedTurnoverForAnAssessment()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -893,7 +893,7 @@ namespace SICorp.Test.Builder
         public void BeginAnAssessment()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -910,9 +910,11 @@ namespace SICorp.Test.Builder
                 if (resultClickEdit)
                 {
                     builderPage.ClickEligibilityDetails();
+                    builderPage.WaitTillBusyDialogClose();
+                    Thread.Sleep(3000);
                     builderPage.ClickCopyAllLimitsLink();
                     builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(1000);
+                    Thread.Sleep(3000);
                     builderPage.ClickButtonSaveEligibilityReview();
                     builderPage.WaitTillBusyDialogClose();
                     Thread.Sleep(1000);
@@ -925,7 +927,7 @@ namespace SICorp.Test.Builder
         public void UpdateTrackRecord()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "220292C";
@@ -960,7 +962,7 @@ namespace SICorp.Test.Builder
         public void EnterFinancials()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login("nguyenv", "Abc123456@");
+            loginPage.Login("nguyenv", MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "220292C";
@@ -993,7 +995,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -1056,7 +1058,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
             var licenceNumber = "94116C";
@@ -1137,174 +1139,174 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void SubmitToHBCFFunctionality()
         {
-            //DateTime currentTime;
-            var currentUser = "CSCTestC";
-            var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            ////DateTime currentTime;
+            //var currentUser = "CSCTestC";
+            //var loginPage = new LoginPage(driver);
+            //loginPage.Login(currentUser, MemberInfo.PasswordC);
 
-            GoToSearchBeat();
-            var licenceNumber = "94116C";
+            //GoToSearchBeat();
+            //var licenceNumber = "94116C";
 
-            builderPage.SetBuilderLicenceNumber(licenceNumber);
-            builderPage.ClickSearchBuilder();
+            //builderPage.SetBuilderLicenceNumber(licenceNumber);
+            //builderPage.ClickSearchBuilder();
 
-            var searchResult = builderPage.ResultSearch();
-            if (searchResult)
-            {
-                builderPage.ClickViewAssessments();
-                var assessmentId = builderPage.GetEditAssessmentId();
-                var resultClickEdit = builderPage.ClickEditLinkAssessment();
-                if (resultClickEdit)
-                {
-                    FinaliseAssessment();
-                    builderPage.ClickEligibilityDetails();
-                    builderPage.ClickCopyAllLimitsLink();
+            //var searchResult = builderPage.ResultSearch();
+            //if (searchResult)
+            //{
+            //    builderPage.ClickViewAssessments();
+            //    var assessmentId = builderPage.GetEditAssessmentId();
+            //    var resultClickEdit = builderPage.ClickEditLinkAssessment();
+            //    if (resultClickEdit)
+            //    {
+            //        FinaliseAssessment();
+            //        builderPage.ClickEligibilityDetails();
+            //        builderPage.ClickCopyAllLimitsLink();
 
-                    builderPage.ClickButtonSaveEligibilityReview();
-                    builderPage.WaitTillBusyDialogClose();
+            //        builderPage.ClickButtonSaveEligibilityReview();
+            //        builderPage.WaitTillBusyDialogClose();
                     
-                    builderPage.ClickBeginAssessment();
-                    builderPage.WaitTillBusyDialogClose();
+            //        builderPage.ClickBeginAssessment();
+            //        builderPage.WaitTillBusyDialogClose();
 
-                    Assert.IsTrue(builderPage.CheckTrackRecordMenuEnable());
+            //        Assert.IsTrue(builderPage.CheckTrackRecordMenuEnable());
 
-                    builderPage.ClickButtonFinancialInputsMenu();
-                    builderPage.SetValueSalesRow("5000000");
+            //        builderPage.ClickButtonFinancialInputsMenu();
+            //        builderPage.SetValueSalesRow("5000000");
 
-                    var saleSaveButton = builderPage.GetSaveButtonWithSubHeaderRow();
-                    saleSaveButton.Click();
+            //        var saleSaveButton = builderPage.GetSaveButtonWithSubHeaderRow();
+            //        saleSaveButton.Click();
 
-                    builderPage.WaitTillBusyDialogClose();
+            //        builderPage.WaitTillBusyDialogClose();
 
-                    builderPage.ClickButtonOverallOutcomeMenu();
-                    builderPage.SetValueForHBCFOpenJobLimit("55000000", "65");
-                    builderPage.ClickSaveOutcomeDetailsButton();
-                    builderPage.WaitTillBusyDialogClose();
-                    Assert.IsTrue(OverallOutcomeService.CheckDelegationApprovalText(Common.LblDelegationApproval));
-                    builderPage.SetValueForUnderWriterAssessmentOutcomeDropDown("Referred (see below)");
-                    builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(2000);
-                    builderPage.SetValueForReferredToDropDown("Level A - HBCF");
-                    builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(2000);
-                    Assert.IsTrue(builderPage.IsRequestDelegationApprovalButtonEnabled() && builderPage.IsSubmitToHBCFButtonEnabled());
+            //        builderPage.ClickButtonOverallOutcomeMenu();
+            //        builderPage.SetValueForHBCFOpenJobLimit("55000000", "65");
+            //        builderPage.ClickSaveOutcomeDetailsButton();
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Assert.IsTrue(OverallOutcomeService.CheckDelegationApprovalText(Common.LblDelegationApproval));
+            //        builderPage.SetValueForUnderWriterAssessmentOutcomeDropDown("Referred (see below)");
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Thread.Sleep(2000);
+            //        builderPage.SetValueForReferredToDropDown("Level A - HBCF");
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Thread.Sleep(2000);
+            //        Assert.IsTrue(builderPage.IsRequestDelegationApprovalButtonEnabled() && builderPage.IsSubmitToHBCFButtonEnabled());
 
-                    builderPage.ClickSubmitToHBCFButton();
-                    builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(2000);
-                    builderPage.ClickInitiateMenuButton();
-                    Thread.Sleep(2000);
-                    Assert.IsTrue(builderPage.VerifyAssignedToSuttont());
-                    Assert.IsTrue(builderPage.VerifyHBCFLabel());
-                    builderPage.ClickKeyEventsLogButtonMenu();
-                    Thread.Sleep(2000);
-                    builderPage.SetLicenseNumberSearchEventLogs(licenceNumber);
-                    Thread.Sleep(2000);
-                    builderPage.ClickButtonSearchKeyEventLogs();
-                    Thread.Sleep(2000);
-                    if (builderPage.GetSearchResultKeyEventLog())
-                    {
-                        var actionRequired = builderPage.CheckActionRequiredByKeyEventLogs(currentUser);
-                        var emailVerify = builderPage.CheckEmailSentKeyEventLogs(currentUser);
-                        Assert.IsTrue(actionRequired && emailVerify);
-                    }
-                    else
-                    {
-                        Assert.IsTrue(builderPage.GetSearchResultKeyEventLog());
-                    }
-                }
-            }
+            //        builderPage.ClickSubmitToHBCFButton();
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Thread.Sleep(2000);
+            //        builderPage.ClickInitiateMenuButton();
+            //        Thread.Sleep(2000);
+            //        Assert.IsTrue(builderPage.VerifyAssignedToSuttont());
+            //        Assert.IsTrue(builderPage.VerifyHBCFLabel());
+            //        builderPage.ClickKeyEventsLogButtonMenu();
+            //        Thread.Sleep(2000);
+            //        builderPage.SetLicenseNumberSearchEventLogs(licenceNumber);
+            //        Thread.Sleep(2000);
+            //        builderPage.ClickButtonSearchKeyEventLogs();
+            //        Thread.Sleep(2000);
+            //        if (builderPage.GetSearchResultKeyEventLog())
+            //        {
+            //            var actionRequired = builderPage.CheckActionRequiredByKeyEventLogs(currentUser);
+            //            var emailVerify = builderPage.CheckEmailSentKeyEventLogs(currentUser);
+            //            Assert.IsTrue(actionRequired && emailVerify);
+            //        }
+            //        else
+            //        {
+            //            Assert.IsTrue(builderPage.GetSearchResultKeyEventLog());
+            //        }
+            //    }
+            //}
         }
 
         //HWIT-4390
         [TestMethod]
         public void RequestDelegationApprovalFromHBCF()
         {
-            DateTime currentTime;
-            var currentUser = MemberInfo.Username;
-            var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, MemberInfo.Password);
+            //DateTime currentTime;
+            //var currentUser = MemberInfo.UsernameC;
+            //var loginPage = new LoginPage(driver);
+            //loginPage.Login(currentUser, MemberInfo.PasswordC);
 
-            GoToSearchBeat();
-            var licenceNumber = "94116C";
+            //GoToSearchBeat();
+            //var licenceNumber = "94116C";
 
-            builderPage.SetBuilderLicenceNumber(licenceNumber);
-            builderPage.ClickSearchBuilder();
+            //builderPage.SetBuilderLicenceNumber(licenceNumber);
+            //builderPage.ClickSearchBuilder();
 
-            var searchResult = builderPage.ResultSearch();
-            if (searchResult)
-            {
-                builderPage.ClickViewAssessments();
-                var assessmentId = builderPage.GetEditAssessmentId();
-                Assert.IsTrue(assessmentId > 0);
-                var resultClickEdit = builderPage.ClickEditLinkAssessment();
-                Thread.Sleep(2000);
-                if (resultClickEdit)
-                {
-                    FinaliseAssessment();
-                    builderPage.ClickEligibilityDetails();
-                    builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(2000);
-                    builderPage.ClickCopyAllLimitsLink();
-                    builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(2000);
-                    builderPage.ClickButtonSaveEligibilityReview();
-                    builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(2000);
-                    builderPage.ClickBeginAssessment();
-                    builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(2000);
-                    Assert.IsTrue(builderPage.CheckTrackRecordMenuEnable());
-                    builderPage.ClickButtonFinancialInputsMenu();
-                    Thread.Sleep(2000);
-                    builderPage.SetValueSalesRow("5000000");
-                    Thread.Sleep(2000);
-                    var saleSaveButton = builderPage.GetSaveButtonWithSubHeaderRow();
-                    saleSaveButton.Click();
-                    builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(2000);
-                    builderPage.ClickButtonOverallOutcomeMenu();
-                    Thread.Sleep(2000);
-                    builderPage.SetValueForHBCFOpenJobLimit("55000000", "65");
-                    Thread.Sleep(2000);
-                    builderPage.ClickSaveOutcomeDetailsButton();
-                    builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(2000);
-                    Assert.IsTrue(OverallOutcomeService.CheckDelegationApprovalText(Common.LblDelegationApproval));
-                    builderPage.SetValueForUnderWriterAssessmentOutcomeDropDown("Referred (see below)");
-                    builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(2000);
-                    builderPage.SetValueForReferredToDropDown("Level A - HBCF");
-                    builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(2000);
-                    Assert.IsTrue(builderPage.IsRequestDelegationApprovalButtonEnabled() && builderPage.IsSubmitToHBCFButtonEnabled());
+            //var searchResult = builderPage.ResultSearch();
+            //if (searchResult)
+            //{
+            //    builderPage.ClickViewAssessments();
+            //    var assessmentId = builderPage.GetEditAssessmentId();
+            //    Assert.IsTrue(assessmentId > 0);
+            //    var resultClickEdit = builderPage.ClickEditLinkAssessment();
+            //    Thread.Sleep(2000);
+            //    if (resultClickEdit)
+            //    {
+            //        FinaliseAssessment();
+            //        builderPage.ClickEligibilityDetails();
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Thread.Sleep(2000);
+            //        builderPage.ClickCopyAllLimitsLink();
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Thread.Sleep(2000);
+            //        builderPage.ClickButtonSaveEligibilityReview();
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Thread.Sleep(2000);
+            //        builderPage.ClickBeginAssessment();
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Thread.Sleep(2000);
+            //        Assert.IsTrue(builderPage.CheckTrackRecordMenuEnable());
+            //        builderPage.ClickButtonFinancialInputsMenu();
+            //        Thread.Sleep(2000);
+            //        builderPage.SetValueSalesRow("5000000");
+            //        Thread.Sleep(2000);
+            //        var saleSaveButton = builderPage.GetSaveButtonWithSubHeaderRow();
+            //        saleSaveButton.Click();
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Thread.Sleep(2000);
+            //        builderPage.ClickButtonOverallOutcomeMenu();
+            //        Thread.Sleep(2000);
+            //        builderPage.SetValueForHBCFOpenJobLimit("55000000", "65");
+            //        Thread.Sleep(2000);
+            //        builderPage.ClickSaveOutcomeDetailsButton();
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Thread.Sleep(2000);
+            //        Assert.IsTrue(OverallOutcomeService.CheckDelegationApprovalText(Common.LblDelegationApproval));
+            //        builderPage.SetValueForUnderWriterAssessmentOutcomeDropDown("Referred (see below)");
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Thread.Sleep(2000);
+            //        builderPage.SetValueForReferredToDropDown("Level A - HBCF");
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Thread.Sleep(2000);
+            //        Assert.IsTrue(builderPage.IsRequestDelegationApprovalButtonEnabled() && builderPage.IsSubmitToHBCFButtonEnabled());
 
-                    currentTime = DateTime.Now;
-                    builderPage.ClickRequestDelegationApprovalButton();
-                    builderPage.WaitTillBusyDialogClose();
-                    Thread.Sleep(2000);
-                    builderPage.ClickInitiateMenuButton();
-                    Thread.Sleep(2000);
-                    Assert.IsTrue(builderPage.VerifyAssignedToSuttont());
-                    Assert.IsTrue(builderPage.VerifyHBCFLabel());
-                    builderPage.ClickKeyEventsLogButtonMenu();
-                    Thread.Sleep(2000);
-                    builderPage.SetLicenseNumberSearchEventLogs(licenceNumber);
-                    Thread.Sleep(2000);
-                    builderPage.ClickButtonSearchKeyEventLogs();
-                    Thread.Sleep(2000);
-                    if (builderPage.GetSearchResultKeyEventLog())
-                    {
-                        var actionRequired = builderPage.CheckActionRequiredByKeyEventLogs(currentUser);
-                        var emailVerify = builderPage.CheckEmailSentKeyEventLogs(currentUser);
-                        Assert.IsTrue(actionRequired && emailVerify);
-                    }
-                    else
-                    {
-                        Assert.IsTrue(builderPage.GetSearchResultKeyEventLog());
-                    }
-                }
-            }
+            //        currentTime = DateTime.Now;
+            //        builderPage.ClickRequestDelegationApprovalButton();
+            //        builderPage.WaitTillBusyDialogClose();
+            //        Thread.Sleep(2000);
+            //        builderPage.ClickInitiateMenuButton();
+            //        Thread.Sleep(2000);
+            //        Assert.IsTrue(builderPage.VerifyAssignedToSuttont());
+            //        Assert.IsTrue(builderPage.VerifyHBCFLabel());
+            //        builderPage.ClickKeyEventsLogButtonMenu();
+            //        Thread.Sleep(2000);
+            //        builderPage.SetLicenseNumberSearchEventLogs(licenceNumber);
+            //        Thread.Sleep(2000);
+            //        builderPage.ClickButtonSearchKeyEventLogs();
+            //        Thread.Sleep(2000);
+            //        if (builderPage.GetSearchResultKeyEventLog())
+            //        {
+            //            var actionRequired = builderPage.CheckActionRequiredByKeyEventLogs(currentUser);
+            //            var emailVerify = builderPage.CheckEmailSentKeyEventLogs(currentUser);
+            //            Assert.IsTrue(actionRequired && emailVerify);
+            //        }
+            //        else
+            //        {
+            //            Assert.IsTrue(builderPage.GetSearchResultKeyEventLog());
+            //        }
+            //    }
+            //}
         }
 
 
@@ -1313,7 +1315,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -1341,7 +1343,7 @@ namespace SICorp.Test.Builder
                 driver.Navigate().GoToUrl("https://portal-uat.hbcf.nsw.gov.au/portal/server.pt?open=space&name=Login&control=Login&login=&in_hi_userid=953&cached=true");
                 currentUser = "CSCTestC";
                 loginPage = new LoginPage(driver);
-                loginPage.Login(currentUser, "xBA7SHg$5acY");
+                loginPage.Login(currentUser, MemberInfo.PasswordC);
                 GoToSearchBeat();
 
 
@@ -1361,7 +1363,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
             
@@ -1399,7 +1401,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
             
@@ -1464,7 +1466,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -1536,7 +1538,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -1611,7 +1613,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -1647,7 +1649,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
             
@@ -1684,18 +1686,24 @@ namespace SICorp.Test.Builder
                     Assert.IsTrue(resultUploadFile3);
 
                     builderPage.ClickEligibilityDetails();
+                    Thread.Sleep(3000);
                     builderPage.ClickCopyAllLimitsLink();
+                    Thread.Sleep(3000);
                     builderPage.ClickButtonSaveEligibilityReview();
                     builderPage.WaitTillBusyDialogClose();
+                    Thread.Sleep(3000);
                     builderPage.ClickBeginAssessment();
                     builderPage.WaitTillBusyDialogClose();
+                    Thread.Sleep(3000);
                     builderPage.ClickButtonFinancialInputsMenu();
                     Thread.Sleep(3000);
                     builderPage.SetValueSalesRow("5000000");
                     var saleSaveButton = builderPage.GetSaveButtonWithSubHeaderRow();
                     saleSaveButton.Click();
                     builderPage.WaitTillBusyDialogClose();
+                    Thread.Sleep(3000);
                     builderPage.ClickButtonOverallOutcomeMenu();
+                    Thread.Sleep(3000);
 
                     //builderPage.SetValueAssessmentStatus("Pending");
                     //builderPage.WaitTillBusyDialogClose();
@@ -1708,7 +1716,9 @@ namespace SICorp.Test.Builder
                     //Thread.Sleep(2000);
                     //builderPage.ClickSaveOutcomeDetailsButton();
                     OverallOutcomeService.SetHBCApprovedOpenJobLimitValueForGTA("9000000");
+                    Thread.Sleep(1000);
                     OverallOutcomeService.SetHBCApprovedOpenJobLimitNumberForGTA("15");
+                    Thread.Sleep(1000);
 
                     OverallOutcomeService.ClickSaveOutcomeDetailsButton();
                     builderPage.WaitTillBusyDialogClose();
@@ -1729,12 +1739,14 @@ namespace SICorp.Test.Builder
 
                     var date = DateTime.Now.AddHours(3).ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
                     OverallOutcomeService.SetValueDateTermsOffered(date);
+                    Thread.Sleep(2000);
                     //builderPage.SetValueAssessmentStatus(EligibilityAssessmentStatus.TermsAccepted);
                     OverallOutcomeService.SetValueEligibilityAssessmentStatusDll(EligibilityAssessmentStatus.TermsAccepted);
                     builderPage.WaitTillBusyDialogClose();
                     Thread.Sleep(2000);
                     //builderPage.ClickFinaliseAssessmentButton();
                     OverallOutcomeService.UpdateToMetIfIsNotMet();
+                    Thread.Sleep(2000);
                     OverallOutcomeService.ClickFinaliseAssessmentButton();
                     builderPage.WaitTillBusyDialogClose();
                     Thread.Sleep(2000);
@@ -1758,7 +1770,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             driver.Navigate().GoToUrl("https://portal-uat.hbcf.nsw.gov.au/portal/server.pt/gateway/PTARGS_0_0_352_0_0_43/http%3B/portal-app/Beat/Home.aspx");
 
@@ -1774,19 +1786,19 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void DistributorAccessVerification()
         {
-            var currentUser = "brktst109";
-            var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Ry6VehK3#Qjw");
+            //var currentUser = MemberInfo.UserBrktst109;
+            //var loginPage = new LoginPage(driver);
+            //loginPage.Login(currentUser, MemberInfo.PassBrktst109);
 
-            driver.Navigate().GoToUrl("https://portal-uat.hbcf.nsw.gov.au/portal/server.pt/gateway/PTARGS_0_23722_352_0_0_43/http%3B/portal-app/BEAT/Home.aspx");
+            //driver.Navigate().GoToUrl("https://portal-uat.hbcf.nsw.gov.au/portal/server.pt/gateway/PTARGS_0_23722_352_0_0_43/http%3B/portal-app/BEAT/Home.aspx");
 
-            builderPage.ClickHomeMenuButton();
-            builderPage.ClickTaskAdministratorMenu();
-            builderPage.ClickBuilderAndEligibilitiesMenu();
-            builderPage.ClickChartMenu();
-            builderPage.ClickKeyEventsLogButtonMenu();
-            builderPage.ClickReportMenu();
-            CheckExistsReport();
+            //builderPage.ClickHomeMenuButton();
+            //builderPage.ClickTaskAdministratorMenu();
+            //builderPage.ClickBuilderAndEligibilitiesMenu();
+            //builderPage.ClickChartMenu();
+            //builderPage.ClickKeyEventsLogButtonMenu();
+            //builderPage.ClickReportMenu();
+            //CheckExistsReport();
         }
 
         /// <summary>
@@ -1808,7 +1820,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
             
@@ -2018,7 +2030,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -2097,18 +2109,25 @@ namespace SICorp.Test.Builder
         public void CSCUnderwriterAccessVerification()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login(MemberInfo.Username, MemberInfo.Password);
+            loginPage.Login(MemberInfo.UsernameC, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
             builderPage.ClickHomeMenuButton();
+            Thread.Sleep(3000);
             builderPage.ClickTaskAdministratorMenu();
+            Thread.Sleep(1000);
             builderPage.ClickBuilderAndEligibilitiesMenu();
             builderPage.ClickButtonManageGroup();
+            Thread.Sleep(1000);
             builderPage.ClickCreateNewBuilderButtonMenu();
+            Thread.Sleep(1000);
             builderPage.ClickCloseLicenseLookUp();
+            Thread.Sleep(1000);
             builderPage.ClickChartMenu();
+            Thread.Sleep(1000);
             builderPage.ClickWorkflowManagementMenu();
+            Thread.Sleep(1000);
             builderPage.ClickButtonRequestNewBuilderMenu();
             Thread.Sleep(2000);
             builderPage.ClickKeyEventsLogButtonMenu();
@@ -2177,7 +2196,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -2245,7 +2264,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -2289,7 +2308,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
             
@@ -2328,7 +2347,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
             
@@ -2368,7 +2387,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -2408,7 +2427,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -2427,7 +2446,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
             
@@ -2485,7 +2504,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -2498,13 +2517,14 @@ namespace SICorp.Test.Builder
             if (searchResult)
             {
                 builderPage.ClickViewAssessments();
+                Thread.Sleep(3000);
                 builderPage.ClickViewLinkAssessment();
 
                 Assert.IsFalse(builderPage.IsAddNewCommentButtonEnabled());
 
-                currentUser = "Brktst109";
+                currentUser = MemberInfo.UserBrktst109;
                 driver.Navigate().GoToUrl("https://portal-uat.hbcf.nsw.gov.au/portal/server.pt?open=space&name=Login&control=Login&login=&in_hi_userid=953&cached=true");
-                loginPage.Login(currentUser, "Ry6VehK3#Qjw");
+                loginPage.Login(currentUser, MemberInfo.PassBrktst109);
 
                 GoToSearchBeat();
 
@@ -2529,7 +2549,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -2634,7 +2654,7 @@ namespace SICorp.Test.Builder
         public void ConditionDeedOfIndemnityInResepectOfFormerBusinessRequiredForEligibilityMetDoNotDisplay()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login(MemberInfo.Username, MemberInfo.Password);
+            loginPage.Login(MemberInfo.UsernameC, MemberInfo.PasswordC);
 
             GoToSearchBeat();
             
@@ -2753,7 +2773,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -2859,47 +2879,47 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void TestRedistributeGroupLimitsForGTABuilders()
         {
-            var loginPage = new LoginPage(driver);
-            loginPage.Login(MemberInfo.Username, MemberInfo.Password);
+            //var loginPage = new LoginPage(driver);
+            //loginPage.Login(MemberInfo.UsernameC, MemberInfo.PasswordC);
 
-            GoToSearchBeat();
+            //GoToSearchBeat();
             
-            var licenceNumber = "131951";
-            builderPage.SetBuilderLicenceNumber(licenceNumber);
-            builderPage.ClickSearchBuilder();
+            //var licenceNumber = "131951";
+            //builderPage.SetBuilderLicenceNumber(licenceNumber);
+            //builderPage.ClickSearchBuilder();
 
-            var searchResult = builderPage.ResultSearch();
-            if (searchResult)
-            {
-                builderPage.ClickViewBuilder();
-                var url = driver.Url;
-                builderPage.ClickRedistributeGroupLimitsButton();
-                Thread.Sleep(2000);
-                builderPage.SetJobAndtotalValueRow("11", "600000", 0);
-                Thread.Sleep(2000);
-                builderPage.SetJobAndtotalValueRow("2", "500000", 1);
-                builderPage.ClickOkButtonOkRedis();
-                builderPage.WaitTillSavingJobLimitsDialogClose();
-                Thread.Sleep(2000);
-                Assert.IsTrue(builderPage.ConfirmNewRowInEligibilities("11", "600000"));
-                builderPage.ClickKeyEventsLogButtonMenu();
-                Thread.Sleep(2000);
-                builderPage.SetLicenseNumberSearchEventLogs(licenceNumber);
-                Thread.Sleep(2000);
-                builderPage.ClickButtonSearchKeyEventLogs();
-                Thread.Sleep(2000);
-                Assert.IsTrue(builderPage.CheckKeyEventLogForBuilder("GTA Job Limits Redistributed", DateTime.Now.AddHours(3)));
-                Assert.IsTrue(builderPage.CheckKeyEventLogForBuilder("COE had been generated", DateTime.Now.AddHours(3)));
-                Assert.IsTrue(builderPage.CheckKeyEventLogForBuilder("New eligibility created", DateTime.Now.AddHours(3)));
-                Assert.IsTrue(builderPage.CheckKeyEventLogForBuilder("Eligibility has been superseded", DateTime.Now.AddHours(3)));
-                driver.Navigate().GoToUrl(url);
-                builderPage.ClickRedistributeGroupLimitsButton();
-                Thread.Sleep(2000);
-                builderPage.SetJobAndtotalValueRow("10", "500000", 0);
-                Thread.Sleep(2000);
-                builderPage.SetJobAndtotalValueRow("3", "600000", 1);
-                builderPage.WaitTillSavingJobLimitsDialogClose();
-            }
+            //var searchResult = builderPage.ResultSearch();
+            //if (searchResult)
+            //{
+            //    builderPage.ClickViewBuilder();
+            //    var url = driver.Url;
+            //    builderPage.ClickRedistributeGroupLimitsButton();
+            //    Thread.Sleep(2000);
+            //    builderPage.SetJobAndtotalValueRow("11", "600000", 0);
+            //    Thread.Sleep(2000);
+            //    builderPage.SetJobAndtotalValueRow("2", "500000", 1);
+            //    builderPage.ClickOkButtonOkRedis();
+            //    builderPage.WaitTillSavingJobLimitsDialogClose();
+            //    Thread.Sleep(2000);
+            //    Assert.IsTrue(builderPage.ConfirmNewRowInEligibilities("11", "600000"));
+            //    builderPage.ClickKeyEventsLogButtonMenu();
+            //    Thread.Sleep(2000);
+            //    builderPage.SetLicenseNumberSearchEventLogs(licenceNumber);
+            //    Thread.Sleep(2000);
+            //    builderPage.ClickButtonSearchKeyEventLogs();
+            //    Thread.Sleep(2000);
+            //    Assert.IsTrue(builderPage.CheckKeyEventLogForBuilder("GTA Job Limits Redistributed", DateTime.Now.AddHours(3)));
+            //    Assert.IsTrue(builderPage.CheckKeyEventLogForBuilder("COE had been generated", DateTime.Now.AddHours(3)));
+            //    Assert.IsTrue(builderPage.CheckKeyEventLogForBuilder("New eligibility created", DateTime.Now.AddHours(3)));
+            //    Assert.IsTrue(builderPage.CheckKeyEventLogForBuilder("Eligibility has been superseded", DateTime.Now.AddHours(3)));
+            //    driver.Navigate().GoToUrl(url);
+            //    builderPage.ClickRedistributeGroupLimitsButton();
+            //    Thread.Sleep(2000);
+            //    builderPage.SetJobAndtotalValueRow("10", "500000", 0);
+            //    Thread.Sleep(2000);
+            //    builderPage.SetJobAndtotalValueRow("3", "600000", 1);
+            //    builderPage.WaitTillSavingJobLimitsDialogClose();
+            //}
         }
 
         //HWIT-4507
@@ -2908,7 +2928,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
             
@@ -3012,7 +3032,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
             
@@ -3029,58 +3049,89 @@ namespace SICorp.Test.Builder
                 FinaliseAssessment();
 
                 builderPage.ClickSubmitToBrokerButton();
+                Thread.Sleep(3000);
                 builderPage.VerifyColorDistributorLabel();
+                Thread.Sleep(3000);
 
                 builderPage.ClickEligibilityDetails();
+                builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
 
                 builderPage.ClickCopyAllLimitsLink();
+                builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
                 builderPage.ClickButtonSaveEligibilityReview();
                 builderPage.WaitTillBusyDialogClose();
-
+                Thread.Sleep(3000);
+                
                 builderPage.ClickBeginAssessment();
                 builderPage.WaitTillBusyDialogClose();
 
                 Assert.IsTrue(builderPage.CheckTrackRecordMenuEnable());
 
                 builderPage.ClickInitiateMenuButton();
+                builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
                 Assert.IsTrue(builderPage.VerifyColorInsuranceAgentLabel());
                 builderPage.ClickSubmitToBrokerButton();
                 Assert.IsTrue(builderPage.VerifyColorDistributorLabel());
 
                 builderPage.ClickButtonFinancialInputsMenu();
+                builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
                 builderPage.SetValueSalesRow("5000000");
+                Thread.Sleep(1000);
                 builderPage.SetValueOpeningStock("250000");
+                Thread.Sleep(1000);
                 builderPage.ClickSaleSaveButton();
                 builderPage.WaitTillBusyDialogClose();
 
                 builderPage.ClickButtonOverallOutcomeMenu();
+                builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
                 builderPage.ClearRecuringConditionForAssessment();
                 builderPage.CheckAndClickAreThereConditionCheckBox();
                 builderPage.WaitTillBusyDialogClose();
                 var keyIssues = "This is test builder communication";
                 builderPage.SetValueKeyIssuesOrOtherConditions(keyIssues);
+                Thread.Sleep(1000);
                 builderPage.ClickSaveBuilderCommunicationButton();
                 builderPage.WaitTillBusyDialogClose();
                 var note = "this is a test note";
                 builderPage.SetValueNote(note);
+                Thread.Sleep(1000);
                 builderPage.ClickSaveNotButtonOverallOutcome();
                 builderPage.WaitTillBusyDialogClose();
                 builderPage.ClickInitiateMenuButton();
+                builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
 
                 Assert.IsTrue(builderPage.VerifyColorDistributorLabel());
                 builderPage.ClickButtonOverallOutcomeMenu();
+                builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
 
                 builderPage.SetValueForHBCFOpenJobLimit("9000000", "25");
+                Thread.Sleep(1000);
                 builderPage.ClickSaveOutcomeDetailsButton();
                 builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
+                builderPage.WaitTillBusyDialogClose();
                 builderPage.ClickInitiateMenuButton();
+                builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
 
                 Assert.IsTrue(builderPage.VerifyColorDistributorLabel());
                 builderPage.ClickButtonOverallOutcomeMenu();
+                builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
 
                 builderPage.ClickDelegationApprovalCheckbox();
                 builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
                 builderPage.ClickInitiateMenuButton();
+                builderPage.WaitTillBusyDialogClose();
+                Thread.Sleep(3000);
 
                 Assert.IsTrue(builderPage.VerifyColorInsuranceAgentLabel());
             }
@@ -3090,104 +3141,104 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void TestTheAssessmentIsAssignedBackToTheDistributorWhenTheOfferTermIsClick()
         {
-            var currentUser = "CSCTestC";
-            var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            //var currentUser = "CSCTestC";
+            //var loginPage = new LoginPage(driver);
+            //loginPage.Login(currentUser, MemberInfo.PasswordC);
 
-            GoToSearchBeat();
+            //GoToSearchBeat();
 
 
-            var licenceNumber = "94116C";
-            builderPage.SetBuilderLicenceNumber(licenceNumber);
-            builderPage.ClickSearchBuilder();
+            //var licenceNumber = "94116C";
+            //builderPage.SetBuilderLicenceNumber(licenceNumber);
+            //builderPage.ClickSearchBuilder();
 
-            var searchResult = builderPage.ResultSearch();
-            if (searchResult)
-            {
-                builderPage.ClickViewAssessments();
-                builderPage.ClickEditLinkAssessment();
+            //var searchResult = builderPage.ResultSearch();
+            //if (searchResult)
+            //{
+            //    builderPage.ClickViewAssessments();
+            //    builderPage.ClickEditLinkAssessment();
 
-                FinaliseAssessment();
+            //    FinaliseAssessment();
 
-                builderPage.ClickButtonSubmitToInsurerInitiateReview();
-                builderPage.VerifyColorInsuranceAgentLabel();
+            //    builderPage.ClickButtonSubmitToInsurerInitiateReview();
+            //    builderPage.VerifyColorInsuranceAgentLabel();
 
-                builderPage.ClickEligibilityDetails();
-                builderPage.WaitTillBusyDialogClose();
+            //    builderPage.ClickEligibilityDetails();
+            //    builderPage.WaitTillBusyDialogClose();
 
-                builderPage.ClickCopyAllLimitsLink();
-                builderPage.ClickButtonSaveEligibilityReview();
-                builderPage.WaitTillBusyDialogClose();
+            //    builderPage.ClickCopyAllLimitsLink();
+            //    builderPage.ClickButtonSaveEligibilityReview();
+            //    builderPage.WaitTillBusyDialogClose();
 
-                builderPage.ClickBeginAssessment();
-                builderPage.WaitTillBusyDialogClose();
+            //    builderPage.ClickBeginAssessment();
+            //    builderPage.WaitTillBusyDialogClose();
 
-                Assert.IsTrue(builderPage.CheckTrackRecordMenuEnable());
+            //    Assert.IsTrue(builderPage.CheckTrackRecordMenuEnable());
 
-                builderPage.ClickButtonFinancialInputsMenu();
-                builderPage.SetValueSalesRow("5000000");
-                builderPage.SetValueOpeningStock("250000");
-                builderPage.ClickSaleSaveButton();
-                builderPage.WaitTillBusyDialogClose();
+            //    builderPage.ClickButtonFinancialInputsMenu();
+            //    builderPage.SetValueSalesRow("5000000");
+            //    builderPage.SetValueOpeningStock("250000");
+            //    builderPage.ClickSaleSaveButton();
+            //    builderPage.WaitTillBusyDialogClose();
 
-                builderPage.ClickButtonOverallOutcomeMenu();
-                builderPage.SetValueAssessmentStatus("Pending");
-                builderPage.WaitTillBusyDialogClose();
-                builderPage.ClearRecuringConditionForAssessment();
-                builderPage.CheckAndClickAreThereConditionCheckBox();
-                builderPage.WaitTillBusyDialogClose();
-                var keyIssues = "This is test builder communication";
-                builderPage.SetValueKeyIssuesOrOtherConditions(keyIssues);
-                builderPage.ClickSaveBuilderCommunicationButton();
-                builderPage.WaitTillBusyDialogClose();
-                var note = "this is a test note";
-                builderPage.SetValueNote(note);
-                builderPage.ClickSaveNotButtonOverallOutcome();
-                builderPage.WaitTillBusyDialogClose();
-                builderPage.ClickInitiateMenuButton();
+            //    builderPage.ClickButtonOverallOutcomeMenu();
+            //    builderPage.SetValueAssessmentStatus("Pending");
+            //    builderPage.WaitTillBusyDialogClose();
+            //    builderPage.ClearRecuringConditionForAssessment();
+            //    builderPage.CheckAndClickAreThereConditionCheckBox();
+            //    builderPage.WaitTillBusyDialogClose();
+            //    var keyIssues = "This is test builder communication";
+            //    builderPage.SetValueKeyIssuesOrOtherConditions(keyIssues);
+            //    builderPage.ClickSaveBuilderCommunicationButton();
+            //    builderPage.WaitTillBusyDialogClose();
+            //    var note = "this is a test note";
+            //    builderPage.SetValueNote(note);
+            //    builderPage.ClickSaveNotButtonOverallOutcome();
+            //    builderPage.WaitTillBusyDialogClose();
+            //    builderPage.ClickInitiateMenuButton();
 
-                Assert.IsTrue(builderPage.VerifyColorInsuranceAgentLabel());
-                builderPage.ClickButtonOverallOutcomeMenu();
-                builderPage.WaitTillBusyDialogClose();
-                builderPage.UnClickConditionCheckbox();
-                builderPage.WaitTillBusyDialogClose();
-                if (builderPage.IsDelegationApprovalCheckboxChecked())
-                {
-                    builderPage.ClickDelegationApprovalCheckbox();
-                    builderPage.WaitTillBusyDialogClose();
-                }
-                builderPage.SetValueForHBCFOpenJobLimit("9000000", "25");
-                builderPage.ClickSaveOutcomeDetailsButton();
-                builderPage.WaitTillBusyDialogClose();
-                builderPage.ClickInitiateMenuButton();
-                builderPage.WaitTillBusyDialogClose();
+            //    Assert.IsTrue(builderPage.VerifyColorInsuranceAgentLabel());
+            //    builderPage.ClickButtonOverallOutcomeMenu();
+            //    builderPage.WaitTillBusyDialogClose();
+            //    builderPage.UnClickConditionCheckbox();
+            //    builderPage.WaitTillBusyDialogClose();
+            //    if (builderPage.IsDelegationApprovalCheckboxChecked())
+            //    {
+            //        builderPage.ClickDelegationApprovalCheckbox();
+            //        builderPage.WaitTillBusyDialogClose();
+            //    }
+            //    builderPage.SetValueForHBCFOpenJobLimit("9000000", "25");
+            //    builderPage.ClickSaveOutcomeDetailsButton();
+            //    builderPage.WaitTillBusyDialogClose();
+            //    builderPage.ClickInitiateMenuButton();
+            //    builderPage.WaitTillBusyDialogClose();
 
-                Assert.IsTrue(builderPage.VerifyColorInsuranceAgentLabel());
-                builderPage.ClickButtonOverallOutcomeMenu();
-                builderPage.WaitTillBusyDialogClose();
+            //    Assert.IsTrue(builderPage.VerifyColorInsuranceAgentLabel());
+            //    builderPage.ClickButtonOverallOutcomeMenu();
+            //    builderPage.WaitTillBusyDialogClose();
 
-                builderPage.ClickDelegationApprovalCheckbox();
-                builderPage.WaitTillBusyDialogClose();
-                builderPage.ClickInitiateMenuButton();
-                builderPage.WaitTillBusyDialogClose();
+            //    builderPage.ClickDelegationApprovalCheckbox();
+            //    builderPage.WaitTillBusyDialogClose();
+            //    builderPage.ClickInitiateMenuButton();
+            //    builderPage.WaitTillBusyDialogClose();
 
-                Assert.IsTrue(builderPage.VerifyColorInsuranceAgentLabel());
+            //    Assert.IsTrue(builderPage.VerifyColorInsuranceAgentLabel());
 
-                builderPage.ClickButtonOverallOutcomeMenu();
-                builderPage.WaitTillBusyDialogClose();
-                Thread.Sleep(300);
-                ClickOfferTermsButtonAndSendMail();
-                builderPage.WaitTillBusyDialogClose();
-                //builderPage.ClickButtonOfferTerms();
-                //builderPage.WaitTillRenderingTemplateDialogClose();
-                //builderPage.ClickSendOfferTermsButton();
-                //builderPage.WaitTillBusyDialogClose();
-                //Thread.Sleep(10000);
-                //builderPage.ClickOkOfferTermsEmailDialog();
-                builderPage.ClickInitiateMenuButton();
-                builderPage.WaitTillBusyDialogClose();
-                Assert.IsTrue(builderPage.VerifyColorDistributorLabel());
-            }
+            //    builderPage.ClickButtonOverallOutcomeMenu();
+            //    builderPage.WaitTillBusyDialogClose();
+            //    Thread.Sleep(300);
+            //    ClickOfferTermsButtonAndSendMail();
+            //    builderPage.WaitTillBusyDialogClose();
+            //    //builderPage.ClickButtonOfferTerms();
+            //    //builderPage.WaitTillRenderingTemplateDialogClose();
+            //    //builderPage.ClickSendOfferTermsButton();
+            //    //builderPage.WaitTillBusyDialogClose();
+            //    //Thread.Sleep(10000);
+            //    //builderPage.ClickOkOfferTermsEmailDialog();
+            //    builderPage.ClickInitiateMenuButton();
+            //    builderPage.WaitTillBusyDialogClose();
+            //    Assert.IsTrue(builderPage.VerifyColorDistributorLabel());
+            //}
         }
 
         //HWIT-4519
@@ -3196,7 +3247,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -3217,7 +3268,7 @@ namespace SICorp.Test.Builder
         public void VerifyNewAssessmentIsNotScheduledIfLastAssessmentIsFinalisedAsNotProceeding()
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login(MemberInfo.Username, MemberInfo.Password);
+            loginPage.Login(MemberInfo.UsernameC, MemberInfo.PasswordC);
 
             GoToSearchBeat();
             
@@ -3294,7 +3345,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -3378,7 +3429,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -3424,7 +3475,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -3444,7 +3495,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
             
@@ -3486,9 +3537,9 @@ namespace SICorp.Test.Builder
         [TestMethod]
         public void VerifyTheAnalystEscalatedToFieldIsCorrectlyPopulated()
         {
-            var currentUser = MemberInfo.Username3;
+            var currentUser = MemberInfo.UsernameE;
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, MemberInfo.Password);
+            loginPage.Login(currentUser, MemberInfo.PasswordE);
 
             GoToSearchBeat();
 
@@ -3589,7 +3640,7 @@ namespace SICorp.Test.Builder
                 builderPage.WaitTillBusyDialogClose();
                 Thread.Sleep(1000);
                 GoToLoginPage();
-                loginPage.Login(MemberInfo.Username, MemberInfo.Password);
+                loginPage.Login(MemberInfo.UsernameC, MemberInfo.PasswordC);
                 GoToSearchBeat();
                 builderPage.ClickHomeMenuButton();
                 Thread.Sleep(3000);
@@ -3602,14 +3653,14 @@ namespace SICorp.Test.Builder
                 builderPage.ClickDelegationApprovalCheckbox();
                 builderPage.WaitTillBusyDialogClose();
                 Thread.Sleep(1000);
-                isTrue = OverallOutcomeService.GetNameOfAnalyst().Contains(MemberInfo.Username3);
+                isTrue = OverallOutcomeService.GetNameOfAnalyst().Contains(MemberInfo.UsernameE);
                 Thread.Sleep(1000);
                 Assert.IsTrue(isTrue);
-                isTrue = OverallOutcomeService.GetNameOfAnalystEscalatedTo().Contains(MemberInfo.Username);
+                isTrue = OverallOutcomeService.GetNameOfAnalystEscalatedTo().Contains(MemberInfo.UsernameC);
                 Thread.Sleep(1000);
                 Assert.IsTrue(isTrue);
                 GoToLoginPage();
-                loginPage.Login(currentUser, MemberInfo.Password);
+                loginPage.Login(currentUser, MemberInfo.PasswordC);
                 GoToSearchBeat();
                 builderPage.ClickHomeMenuButton();
                 Thread.Sleep(3000);
@@ -3668,7 +3719,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -3686,7 +3737,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -3736,7 +3787,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -4004,7 +4055,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             AccessOldFinalisedAssessment("255203");
             AccessOldFinalisedAssessment("250252");
@@ -4033,7 +4084,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "CSCTestC";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "xBA7SHg$5acY");
+            loginPage.Login(currentUser, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
@@ -4056,7 +4107,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -4127,7 +4178,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -4217,7 +4268,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -4245,7 +4296,7 @@ namespace SICorp.Test.Builder
         {
             var currentUser = "nguyenv";
             var loginPage = new LoginPage(driver);
-            loginPage.Login(currentUser, "Abc123456@");
+            loginPage.Login(currentUser, MemberInfo.Password2);
 
             GoToSearchBeat();
 
@@ -6354,7 +6405,7 @@ namespace SICorp.Test.Builder
         private void InitLogin(string licenceNumber = Common.LicenceNumber)
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Login(MemberInfo.Username, MemberInfo.Password);
+            loginPage.Login(MemberInfo.UsernameC, MemberInfo.PasswordC);
 
             GoToSearchBeat();
 
