@@ -16,7 +16,6 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
-- task: DotNetCoreCLI@2
 inputs:
   command: test
   projects: '**/*UnitTestProject1/*.csproj'
